@@ -27,6 +27,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/sm8450-common/sm8450-common-vendor.mk)
 
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
