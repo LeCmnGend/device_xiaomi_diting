@@ -93,6 +93,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
         .regex_replace('.+dolby.+\n', ''),
     (
+        'vendor/lib64/libaudiocloudctrl.so',
         'vendor/lib64/libdpps.so',
         'vendor/lib64/libsnapdragoncolor-manager.so',
     ): blob_fixup()
