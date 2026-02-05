@@ -34,7 +34,6 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-	export LC_ALL="C"
 	export FOX_AB_DEVICE=1
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_SED_BINARY=1
