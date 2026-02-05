@@ -19,8 +19,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := 22081212UG
 PRODUCT_MANUFACTURER := Xiaomi
 
-PRODUCT_MODEL := 22081212UG
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="diting_global-user 15 AQ3A.241006.001 OS2.0.206.0.VLFMIXM release-keys" \
     BuildFingerprint=Xiaomi/diting_global/diting:15/AQ3A.241006.001/OS2.0.206.0.VLFMIXM:user/release-keys \
@@ -41,3 +39,21 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 #    libwfdsinksm \
 #    libwfdrtsp \
 #    libwfdcommonutils
+
+
+# A/B
+ENABLE_AB := true
+ENABLE_VIRTUAL_AB := false
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    odm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
