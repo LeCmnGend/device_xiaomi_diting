@@ -1,0 +1,2 @@
+# Removable storage
+/usbstorage     auto    /dev/block/sdh1                                 /dev/block/sdh      flags=fsflags=utf8;display="USB Storage";storage;wipeingui;removable
