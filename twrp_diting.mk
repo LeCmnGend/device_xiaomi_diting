@@ -1,11 +1,7 @@
 # OrangeFox / TWRP recovery product for diting
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit from device.
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, device/xiaomi/diting/device.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
@@ -20,20 +16,28 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_DEVICE := diting
 PRODUCT_NAME := twrp_diting
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := diting
+PRODUCT_MODEL := 22081212UG
 PRODUCT_MANUFACTURER := Xiaomi
 
-$(call inherit-product, device/xiaomi/diting/device.mk)
+PRODUCT_MODEL := 22081212UG
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildDesc="diting_global-user 15 AQ3A.241006.001 OS2.0.206.0.VLFMIXM release-keys" \
+    BuildFingerprint=Xiaomi/diting_global/diting:15/AQ3A.241006.001/OS2.0.206.0.VLFMIXM:user/release-keys \
+    DeviceProduct=diting \
+    SystemName=diting_global
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 #VENDOR_SECURITY_PATCH := 2025-11-01
 
 # OFOX: block Xiaomi diting (IMS / WFD / system_ext)
-PRODUCT_PACKAGES_REMOVE += \
-    libimsmedia_jni \
-    libimscamera_jni \
-    libimsrtp_jni \
-    libwfdservice \
-    libwfdsinksm \
-    libwfdrtsp \
-    libwfdcommonutils
+#PRODUCT_PACKAGES_REMOVE += \
+#    libimsmedia_jni \
+#    libimscamera_jni \
+#    libimsrtp_jni \
+#    libwfdservice \
+#    libwfdsinksm \
+#    libwfdrtsp \
+#    libwfdcommonutils
