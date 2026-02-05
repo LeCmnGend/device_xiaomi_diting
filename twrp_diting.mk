@@ -20,8 +20,8 @@ PRODUCT_MODEL := 22081212UG
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="diting_global-user 15 AQ3A.241006.001 OS2.0.206.0.VLFMIXM release-keys" \
-    BuildFingerprint=Xiaomi/diting_global/diting:15/AQ3A.241006.001/OS2.0.206.0.VLFMIXM:user/release-keys \
+    BuildDesc="diting_global-user 16 AQ3A.241006.001 OS2.0.206.0.VLFMIXM release-keys" \
+    BuildFingerprint=Xiaomi/diting_global/diting:16/AQ3A.241006.001/OS2.0.206.0.VLFMIXM:user/release-keys \
     DeviceProduct=diting \
     SystemName=diting_global
 
@@ -40,7 +40,8 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 #    libwfdrtsp \
 #    libwfdcommonutils
 
-
+# Real A/B, NOT Virtual A/B
+TARGET_USES_VIRTUAL_AB := false
 # A/B
 ENABLE_AB := true
 ENABLE_VIRTUAL_AB := false
@@ -57,3 +58,8 @@ AB_OTA_PARTITIONS += \
     vendor \
     vendor_boot \
     vendor_dlkm
+
+# Building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
